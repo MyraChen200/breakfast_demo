@@ -40,6 +40,13 @@
 			<p>1. 訂單免運比例圓餅圖</p>
 			<canvas id="myChart"></canvas>
 		</div>
+		<br>
+		<div class="col-6">
+			<p>3. 最受用戶歡迎的商品前三名</p>
+			{% for product_name in popular_product %}
+				<div>Top{{ forloop.counter }}:  {{ product_name }}</div>
+			{% endfor %}
+		</div>
       
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
