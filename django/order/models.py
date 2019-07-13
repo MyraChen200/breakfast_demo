@@ -11,4 +11,3 @@ class order_item(models.Model):
     order_id = models.ForeignKey('order', null=False, blank=False, db_column='order_id', on_delete=models.CASCADE)
     product_name = models.CharField(max_length=255, null=False, blank=False)
     qty = models.IntegerField(null=False)
-
