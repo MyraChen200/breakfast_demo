@@ -33,12 +33,12 @@ def get_most_popular(limit):
     cursor = connection.cursor()
     cursor.execute(
         """
-        SELECT 
+        SELECT
             result.product_name,
             count(result.customer_id) as order_customer_count,
             sum(result.qty) as total_count
         FROM (
-            SELECT customer_id, product_name, oi.qty
+            SELECT customer_id, product_name, sum(oi.qty) as qty
             FROM order_order as o
             JOIN order_order_item as oi
             ON o.order_id = oi.order_id
@@ -48,6 +48,7 @@ def get_most_popular(limit):
         ORDER BY order_customer_count DESC, total_count DESC"""
     )
     row = cursor.fetchall()
+    print(row)
     for data in row:
         if len(popular_list) >= limit:
             break
