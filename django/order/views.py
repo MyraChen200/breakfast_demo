@@ -48,7 +48,6 @@ def get_most_popular(limit):
         ORDER BY order_customer_count DESC, total_count DESC"""
     )
     row = cursor.fetchall()
-    print(row)
     for data in row:
         if len(popular_list) >= limit:
             break
