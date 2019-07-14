@@ -20,6 +20,8 @@ Install required packages
 ```bash
 pip install -r requirements.txt
 ```
+### DB config
+Create database and modify DB config in settings.py
 
 ### Load a fixtures into database
 ```bash
