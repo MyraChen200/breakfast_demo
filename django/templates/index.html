@@ -41,6 +41,11 @@
 			<canvas id="myChart"></canvas>
 		</div>
 		<br>
+		<div class="col-8">
+			<p>2. 畫出用戶及下訂行為的同類群組分析表(Cohort) (以天為週期 )</p>
+			<canvas id="myLineChart"></canvas>
+		</div>
+		<br>
 		<div class="col-6">
 			<p>3. 最受用戶歡迎的商品前三名</p>
 			{% for product_name in popular_product %}
@@ -55,6 +60,7 @@
   		free: {{ shipping.free }},
   		others: {{ shipping.others }}
   	}
+    window.cohort_data = {{ cohort_data|safe }};
   </script>
   <script src="{% static 'js/order.js' %}" type="text/javascript"></script>
 </html>

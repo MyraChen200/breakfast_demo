@@ -53,4 +53,20 @@ $(function () {
             }, 
         }
     });
+
+    var line_ctx = document.getElementById('myLineChart').getContext('2d');
+    var myLineChart = new Chart(line_ctx, {
+        "type": "line",
+        "data": {
+            "labels": window.cohort_data.dates,
+            "datasets": [{
+                "label": "客戶下訂行為",
+                "data": window.cohort_data.counts,
+                "fill": false,
+                "borderColor": "rgb(75, 192, 192)",
+                "lineTension": 0
+            }]
+        },
+        "options":{}
+    });
 });
